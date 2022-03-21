@@ -12,7 +12,8 @@ function App() {
       <div className="content">
         <h1>Thus wrote the Bard...</h1>
         <div className="centered">
-          <p id="printQuote">This is a quote</p>
+          <p id="printQuote">All the world’s a stage,<br />
+And all the men and women merely players</p>
           <p id="author">- William Shakespeare</p>
           <img id="button" src={quill} alt="new quote button" 
           onMouseOver={e => (e.currentTarget.src=quill2)}
