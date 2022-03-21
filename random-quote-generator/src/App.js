@@ -3,6 +3,10 @@ import quill from './quill.png';
 import quill2 from './quill2.png';
 
 function App() {
+
+  function getQuote(e) {
+    alert("You clicked the inkpot!")
+  }
   return (
     <div className="App">
       <div className="content">
@@ -13,7 +17,7 @@ function App() {
           <img id="button" src={quill} alt="new quote button" 
           onMouseOver={e => (e.currentTarget.src=quill2)}
           onMouseOut={e => (e.currentTarget.src=quill)}
-          onclick="generateQuote();" />
+          onClick={getQuote} />
         </div>
       </div>
     <footer className="footer">
