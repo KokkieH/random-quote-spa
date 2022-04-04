@@ -31,6 +31,7 @@ h1 {
 #printQuote {
   font-family: 'Italianno', Brush Script MT, cursive;
   font-size: 3.5em;
+  white-space: pre-wrap;
 }
 #author {
   font-family: 'Italianno', Brush Script MT, cursive;
