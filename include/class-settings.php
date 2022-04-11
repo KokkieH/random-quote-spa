@@ -57,11 +57,11 @@ class KokkieH_Settings {
             self::PAGE_SLUG
         );
     
-        // Username
+        // User ID
         add_settings_field(
-            'kokkieh_quote_spa_username',
-            __( 'Username', 'kokkieh-random-quote-spa' ),
-            array( $this, 'kokkieh_quote_spa_render_username'),
+            'kokkieh_quote_spa_user_id',
+            __( 'User ID', 'kokkieh-random-quote-spa' ),
+            array( $this, 'kokkieh_quote_spa_render_user_id'),
             self::PAGE_SLUG,
             self::SETTINGS_SECTION
         );
@@ -75,7 +75,7 @@ class KokkieH_Settings {
             self::SETTINGS_SECTION
         );
 
-        register_setting( self::PAGE_SLUG, 'kokkieh_quote_spa_username' );
+        register_setting( self::PAGE_SLUG, 'kokkieh_quote_spa_user_id' );
         register_setting( self::PAGE_SLUG, 'kokkieh_quote_spa_api_key' );
     }
 
@@ -87,8 +87,8 @@ class KokkieH_Settings {
 
     // Insert form values
 
-    public function kokkieh_quote_spa_render_username() {
-        $this->kokkieh_quote_spa_render_options( 'kokkieh_quote_spa_username' );
+    public function kokkieh_quote_spa_render_user_id() {
+        $this->kokkieh_quote_spa_render_options( 'kokkieh_quote_spa_user_id' );
     }
 
     public function kokkieh_quote_spa_render_api_key() {
@@ -96,12 +96,10 @@ class KokkieH_Settings {
     }
 
     private function kokkieh_quote_spa_render_options( $option_name ) {
-        $options = get_option( $option_name );
-        $name = $options[ 'name' ];
-        echo "<input id='name' 
-            name='" . esc_attr( $option_name ) . "[name]'
-            type='text' 
-            value='" . esc_attr( $name ) . "'/>";
+        echo "<input type='text' 
+            id='" . esc_attr( $option_name ) . "' 
+            name='" . esc_attr( $option_name ) . "'
+            value='" . get_option( $option_name ) . "'/>";
     }
 
     // Function to add API attribution text
