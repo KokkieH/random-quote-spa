@@ -12,4 +12,6 @@
  * @package         Random_Quote_Spa
  */
 
-// Your code starts here.
+// Register custom plugin settings
+require_once __DIR__ . '/include/class-settings.php';
+new KokkieH_Settings();
