@@ -15,3 +15,7 @@
 // Register custom plugin settings
 require_once __DIR__ . '/include/class-settings.php';
 new KokkieH_Settings();
+
+// Register custom API endpoint
+require_once __DIR__ . '/include/class-rest-api.php';
+new KokkieH_quote_spa_REST_API();
