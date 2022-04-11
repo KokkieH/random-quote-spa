@@ -96,12 +96,10 @@ class KokkieH_Settings {
     }
 
     private function kokkieh_quote_spa_render_options( $option_name ) {
-        $options = get_option( $option_name );
-        $name = $options[ 'name' ];
-        echo "<input id='name' 
-            name='" . esc_attr( $option_name ) . "[name]'
-            type='text' 
-            value='" . esc_attr( $name ) . "'/>";
+        echo "<input type='text' 
+            id='" . esc_attr( $option_name ) . "' 
+            name='" . esc_attr( $option_name ) . "'
+            value='" . get_option( $option_name ) . "'/>";
     }
 
     // Function to add API attribution text
